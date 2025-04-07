@@ -1,12 +1,12 @@
 import React from 'react'
 import PagesLayout from '../layout/PagesLayout'
 
-const AllProducts = () => {
+const Landing = () => {
   return (
     <PagesLayout>
-      AllProducts
+        Landing
     </PagesLayout>
   )
 }
 
-export default AllProducts
+export default Landing
