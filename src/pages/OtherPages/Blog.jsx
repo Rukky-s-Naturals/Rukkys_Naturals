@@ -2,9 +2,9 @@ import React from 'react'
 
 const Blog = () => {
   return (
-    <PagesLayout>
-      Blog on Herbal Products
-    </PagesLayout>
+   <div>
+    <h1>Blog on Herbal Products</h1>
+   </div>
   )
 }
 

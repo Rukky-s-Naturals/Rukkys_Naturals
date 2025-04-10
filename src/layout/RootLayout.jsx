@@ -1,15 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { Outlet } from 'react-router-dom'
 
-const PagesLayout = () => {
+const RootLayout = () => {
   return (
     <div>
-            <Navbar/>
-            <Footer/>
-
+        <Navbar/>
+        <Outlet/>
+        <Footer/>
     </div>
   )
 }
 
-export default PagesLayout
+export default RootLayout
