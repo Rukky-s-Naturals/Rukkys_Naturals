@@ -6,12 +6,11 @@ import Discovery from './LandingPage/Discovery'
 
 const HomeView = () => {
   return (
-    <div>
+    <div className='justify-center items-center font-bold text-xl ml-4'>
         <HeroSection/>
         <Welcome/>
         <Discovery/>
         <Testimonials/>
-
     </div>
   )
 }

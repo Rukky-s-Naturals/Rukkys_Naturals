@@ -1,8 +1,11 @@
 import React from 'react'
+import herbal10 from '../../assets/images/herbal10.png'
 
 const HeroSection = () => {
   return (
-    <div>HeroSection</div>
+    <div className=' flex justify-center '>
+      <img src={herbal10} alt="background picture" />
+    </div>
   )
 }
 
