@@ -6,7 +6,7 @@ import Discovery from './LandingPage/Discovery'
 
 const HomeView = () => {
   return (
-    <div className='justify-center items-center font-bold text-xl ml-4'>
+    <div className='bg-green-50'>
         <HeroSection/>
         <Welcome/>
         <Discovery/>

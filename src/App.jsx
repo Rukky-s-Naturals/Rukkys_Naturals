@@ -8,6 +8,8 @@ import AllProducts from './pages/OtherPages/AllProducts';
 import Blog from './pages/OtherPages/Blog';
 import Booking from './pages/OtherPages/Booking';
 import Contact from './pages/OtherPages/Contact';
+import SingleProduct from './pages/OtherPages/SingleProduct';
+import { Cart } from './pages/OtherPages/Cart';
 
 function App() {
   const router = createBrowserRouter([
@@ -15,30 +17,22 @@ function App() {
       path: '/',
       element: <RootLayout />,
       children: [{ index: true, element: <HomeView /> }, 
-        {
-        path: 'about',
-        element: <About/>
-      }, 
 
-      {
-        path: 'allProducts',
-        element: <AllProducts/>
-      }, 
-      
-      {
-        path: 'blog',
-        element: <Blog/>
-      },
+      {path: 'about', element: <About/>}, 
 
-      {
-        path: 'booking',
-        element: <Booking/>
-      }, 
+      {path: 'allProducts', element: <AllProducts/>}, 
       
-      {
-        path: 'contact',
-        element: <Contact/>
-      }, ]
+      {path: 'blog', element: <Blog/>},
+
+      {path: 'booking', element: <Booking/>}, 
+      
+      {path: 'contact', element: <Contact/>},
+
+      {path: 'allProducts/:id', element: <SingleProduct/>},
+
+      {path: 'cart', element: <Cart/>},
+    ]
+
     },
     
   ]);
