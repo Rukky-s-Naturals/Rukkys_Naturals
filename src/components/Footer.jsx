@@ -1,10 +1,10 @@
 import React from 'react';
-import { FaWhatsapp, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaWhatsapp, FaInstagram, FaLinkedinIn, FaFacebook, FaTiktok, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-green-900 text-white py-10 px-5 md:px-20">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer className="bg-green-900 text-white py-8 px-5 md:px-20">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* About Us Section */}
         <div>
           <h3 className="font-bold text-lg mb-4">About Us</h3>
@@ -15,43 +15,103 @@ const Footer = () => {
           </p>
         </div>
 
+        {/* Quick Links Section */}
+        <div>
+          <h3 className="font-bold text-lg mb-4">Quick Links</h3>
+          <ul className="space-y-2">
+            <li>
+              <a href="/" className="hover:underline">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/about" className="hover:underline">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="/products" className="hover:underline">
+                Products
+              </a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:underline">
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+
         {/* Social Links Section */}
         <div>
-          <h3 className="font-bold text-lg mb-4">Social Links</h3>
+          <h3 className="font-bold text-lg mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/rukkys.naturals/"
               className="p-2 bg-white text-green-900 text-2xl rounded-full hover:bg-green-800 hover:text-white transition"
               aria-label="Instagram"
             >
               <FaInstagram />
             </a>
             <a
-              href="https://gh.linkedin.com/company/rukkysnaturals"
+              href="https://www.linkedin.com/company/rukkysnaturals/"
               className="p-2 bg-white text-green-900 text-2xl rounded-full hover:bg-green-800 hover:text-white transition"
               aria-label="LinkedIn"
             >
               <FaLinkedinIn />
             </a>
             <a
+              href="https://web.facebook.com/rukkysnatural"
+              className="p-2 bg-white text-green-900 text-2xl rounded-full hover:bg-green-800 hover:text-white transition"
+              aria-label="Facebook"
+            >
+              <FaFacebook />
+            </a> 
+            <a
+              href="https://www.tiktok.com/@rukkysnaturals"
+              className="p-2 bg-white text-green-900 text-2xl rounded-full hover:bg-green-800 hover:text-white transition"
+              aria-label="TikTok"
+            >
+              <FaTiktok />
+            </a>
+            {/* <a
               href="https://www.whatsapp.com/"
               className="p-2 bg-white text-green-900 text-2xl rounded-full hover:bg-green-800 hover:text-white transition"
               aria-label="Whatsapp"
             >
               <FaWhatsapp />
-            </a>
+            </a> */}
           </div>
         </div>
 
         {/* Contact Us Section */}
-        <div>
-          <h3 className="font-bold text-lg mb-4">Contact Us</h3>
-          <p className="mb-2">Phone: +233 456 6875</p>
-          <p className="mb-2">Email: support@rukkysnatural.com</p>
-          <p className="mb-2">Address: 123 Herbal Street, Accra, Ghana</p>
-        </div>
-      </div>
+         <div>
+         <h3 className="font-bold text-lg mb-4">Contact Us</h3>
+  <div className="space-y-4">
+    {/* Address with map link */}
+    <a
+      href="https://www.google.com/maps?q=Ashaley+Botwe+Lakeside+Road,+Accra,+Ghana"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 flex-wrap text-yellow-400 hover:text-white transition"
+    >
+      <FaMapMarkerAlt className="text-yellow-400 text-xl flex-shrink-0" />
+      <span>Ashaley Botwe Lakeside Road, Accra-Ghana</span>
+    </a>
+
+    {/* Email link */}
+    <a
+      href="mailto:rukkysnaturals@gmail.com"
+      className="flex items-center gap-3 flex-wrap text-yellow-400 hover:text-white transition"
+    >
+      <FaEnvelope className="text-yellow-400 text-xl flex-shrink-0" />
+      <span>rukkysnaturals@gmail.com</span>
+    </a>
+  </div>
+  <p className="mt-4">Phone: +233 (0) 55 459 9729</p>
+</div>
+         </div>
+
 
       {/* Footer Bottom */}
       <div className="mt-10 text-center border-t border-green-800 pt-4">

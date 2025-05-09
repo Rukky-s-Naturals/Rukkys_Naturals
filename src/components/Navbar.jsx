@@ -1,24 +1,22 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router';
-import { FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa';
-import logo from '../assets/images/logo.png'
+import { Link, NavLink } from 'react-router-dom'; // Corrected import
+import { FaWhatsapp, FaShoppingCart } from 'react-icons/fa'; // Import Cart Icon
+import { useCart } from '../cart/CartContext'; // Import the custom hook to access cart
+import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
+  const { totalItems } = useCart(); // Get the total number of items in the cart
+
   return (
     <nav className="flex flex-wrap items-center justify-between p-2 font-bold font-sans bg-green-50 shadow-md">
       {/* Logo */}
       <div className="flex items-center">
         {/* Logo Image */}
-        <img 
+        <img
           src={logo} // Replace with the correct path to your logo
           alt="Rukkys Naturals Logo"
           className="h-22 w-50 mr-2" // Adjust size as needed
         />
-        {/* Brand Name */}
-        {/* <p className="font-serif font-extrabold text-2xl border-2 p-1 rounded-2xl border-green-700 text-green-900">
-          Rukky<span className="text-red-700">s</span> <br />
-          <span className="text-red-700">Nat</span>urals
-        </p> */}
       </div>
 
       {/* Navigation Links */}
@@ -34,26 +32,22 @@ const Navbar = () => {
       {/* Social Links */}
       <span className="hidden lg:flex gap-5">
         <a
-          href="https://www.instagram.com/"
-          className="text-green-900 hover:text-red-700 transition duration-300"
-          aria-label="Instagram"
-        >
-          <FaInstagram className="text-3xl" />
-        </a>
-        <a
-          href="https://gh.linkedin.com/company/rukkysnaturals"
-          className="text-green-900 hover:text-blue-600 transition duration-300"
-          aria-label="LinkedIn"
-        >
-          <FaLinkedin className="text-3xl" />
-        </a>
-        <a
           href="https://www.whatsapp.com/"
           className="text-green-900 hover:text-green-600 transition duration-300"
           aria-label="WhatsApp"
         >
           <FaWhatsapp className="text-3xl" />
         </a>
+
+        {/* Cart Icon with Total Items Badge */}
+        <Link to="/cart" className="relative">
+          <FaShoppingCart className="text-3xl text-green-900 hover:text-green-600 transition duration-300" />
+          {totalItems > 0 && (
+            <span className="absolute top-[-5px] right-[-5px] bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center">
+              {totalItems}
+            </span>
+          )}
+        </Link>
       </span>
 
       {/* Explore Button */}
@@ -74,20 +68,6 @@ const Navbar = () => {
           <NavLink to="contact"><li>Contact</li></NavLink>
         </ul>
         <div className="flex gap-5 mt-4 justify-center">
-          <a
-            href="https://www.instagram.com/"
-            className="text-green-900 hover:text-red-700 transition duration-300"
-            aria-label="Instagram"
-          >
-            <FaInstagram className="text-3xl" />
-          </a>
-          <a
-            href="https://gh.linkedin.com/company/rukkysnaturals"
-            className="text-green-900 hover:text-blue-600 transition duration-300"
-            aria-label="LinkedIn"
-          >
-            <FaLinkedin className="text-3xl" />
-          </a>
           <a
             href="https://www.whatsapp.com/"
             className="text-green-900 hover:text-green-600 transition duration-300"

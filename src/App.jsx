@@ -9,7 +9,14 @@ import Blog from './pages/OtherPages/Blog';
 import Booking from './pages/OtherPages/Booking';
 import Contact from './pages/OtherPages/Contact';
 import SingleProduct from './pages/OtherPages/SingleProduct';
-import { Cart } from './pages/OtherPages/Cart';
+import Cart from './cart/Cart'
+import Checkout from './cart/Checkout';
+import Payment from './cart/Payment';
+import PaymentSuccess from './cart/PaymentSuccess';
+import Article1 from './Blog/article1';
+import Article2 from './Blog/article2';
+import Sexual from './pages/LandingPage/sexual';
+
 
 function App() {
   const router = createBrowserRouter([
@@ -31,6 +38,19 @@ function App() {
       {path: 'allProducts/:id', element: <SingleProduct/>},
 
       {path: 'cart', element: <Cart/>},
+
+      {path: 'checkout', element: <Checkout/>},
+
+      {path: 'payment', element: <Payment/>},
+
+      {path: 'paymentSuccess', element: <PaymentSuccess/>},
+
+      {path: 'article1', element: <Article1/>},
+
+      {path: 'article2', element: <Article2/>},
+
+      {path: 'sexual', element: <Sexual/>},
+
     ]
 
     },

@@ -1,0 +1,115 @@
+{
+  "herbalProducts": [
+    {
+      "category": "Leaves",
+      "products": [
+        {
+          "id": 1,
+          "name": "Moringa Leaves",
+          "description": "Rich in antioxidants and essential vitamins, moringa leaves support immune health and energy levels.",
+          "price": 10.99,
+          "weight": "100g",
+          "image": "/images/moringa.png"
+        },
+        {
+          "id": 2,
+          "name": "Neem Leaves",
+          "description": "Known for their antibacterial properties, neem leaves promote healthy skin and oral hygiene.",
+          "price": 8.99,
+          "weight": "150g",
+          "image": "/images/neem.png"
+        },
+        {
+          "id": 3,
+          "name": "Mint Leaves",
+          "description": "Fresh and aromatic, mint leaves aid digestion and refresh the breath naturally.",
+          "price": 6.99,
+          "weight": "50g",
+          "image": "/images/mint.png"
+        },
+        {
+          "id": 4,
+          "name": "Basil Leaves",
+          "description": "Holy basil leaves are used to reduce stress, support respiratory health, and enhance flavor in cooking.",
+          "price": 7.49,
+          "weight": "75g",
+          "image": "/images/basil.png"
+        }
+      ]
+    },
+    {
+      "category": "Seeds",
+      "products": [
+        {
+          "id": 5,
+          "name": "Flaxseeds",
+          "description": "A powerhouse of omega-3 fatty acids, flaxseeds help in improving heart health and digestion.",
+          "price": 9.99,
+          "weight": "200g",
+          "image": "/images/flaxseed.png"
+        },
+        {
+          "id": 6,
+          "name": "Chia Seeds",
+          "description": "Packed with fiber and protein, chia seeds are ideal for weight management and sustained energy.",
+          "price": 12.49,
+          "weight": "150g",
+          "image": "/images/chia.png"
+        },
+        {
+          "id": 7,
+          "name": "Fenugreek Seeds",
+          "description": "Fenugreek seeds support blood sugar control, enhance lactation, and improve digestion.",
+          "price": 8.49,
+          "weight": "250g",
+          "image": "/images/fenugreek.png"
+        },
+        {
+          "id": 8,
+          "name": "Sesame Seeds",
+          "description": "Rich in calcium and magnesium, sesame seeds support bone health and provide a nutty flavor.",
+          "price": 7.99,
+          "weight": "300g",
+          "image": "/images/sesame.png"
+        }
+      ]
+    },
+    {
+      "category": "Powder",
+      "products": [
+        {
+          "id": 9,
+          "name": "Turmeric Powder",
+          "description": "A natural anti-inflammatory, turmeric powder is excellent for joint health and glowing skin.",
+          "price": 10.49,
+          "weight": "100g",
+          "image": "/images/turmeric.png"
+        },
+        {
+          "id": 10,
+          "name": "Ginger Powder",
+          "description": "With its warming properties, ginger powder aids digestion and soothes colds and flu.",
+          "price": 9.99,
+          "weight": "120g",
+          "image": "/images/ginger.png"
+        },
+        {
+          "id": 11,
+          "name": "Ashwagandha Powder",
+          "description": "Known for its adaptogenic properties, ashwagandha powder reduces stress and improves vitality.",
+          "price": 14.99,
+          "weight": "200g",
+          "image": "/images/ashwagandha.png"
+        },
+        {
+          "id": 12,
+          "name": "Spirulina Powder",
+          "description": "High in protein and antioxidants, spirulina powder boosts energy and supports detoxification.",
+          "price": 19.99,
+          "weight": "250g",
+          "image": "/images/spirulina.png"
+        }
+      ]
+    }
+  ]
+}
