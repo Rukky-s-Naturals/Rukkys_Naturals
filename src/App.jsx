@@ -15,7 +15,6 @@ import Payment from './cart/Payment';
 import PaymentSuccess from './cart/PaymentSuccess';
 import Article1 from './Blog/article1';
 import Article2 from './Blog/article2';
-import Sexual from './pages/LandingPage/sexual';
 
 
 function App() {
@@ -49,7 +48,6 @@ function App() {
 
       {path: 'article2', element: <Article2/>},
 
-      {path: 'sexual', element: <Sexual/>},
 
     ]
 
