@@ -37,7 +37,7 @@ const Sexual = () => {
   }, [slides.length]);
 
   return (
-    <section className="sexual-section relative h-[650px] w-full">
+    <section className="sexual-section relative h-[650px] w-full md:h-[750px]">
       <div className="relative h-full w-full overflow-hidden">
         {slides.map((slide, index) => (
           <motion.div
@@ -56,9 +56,9 @@ const Sexual = () => {
               ease: 'easeInOut',
             }}
           >
-            <div className="absolute inset-0 bg-black opacity-70 flex flex-col justify-center items-center text-center text-white px-4 space-y-6">
+            <div className="absolute inset-0 bg-black opacity-70 flex flex-col justify-center items-center text-center text-white px-4 md:px-8 space-y-6">
               <motion.h2
-                className="text-5xl font-extrabold tracking-wide"
+                className="text-3xl md:text-5xl font-extrabold tracking-wide"
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 1 }}
@@ -66,7 +66,7 @@ const Sexual = () => {
                 {slide.text}
               </motion.h2>
               <motion.p
-                className="text-lg font-medium max-w-2xl"
+                className="text-sm md:text-lg font-medium max-w-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.2 }}
@@ -74,7 +74,7 @@ const Sexual = () => {
                 At Rukky's Naturals, we believe in holistic solutions for intimate wellness.
               </motion.p>
               <motion.p
-                className="text-lg italic"
+                className="text-sm md:text-lg italic"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.5 }}
@@ -82,7 +82,7 @@ const Sexual = () => {
                 "I can teach you how to transform your sex life naturally."
               </motion.p>
               <motion.button
-                className="bg-white hover:bg-green-200 text-green-900 font-bold py-3 px-6 rounded-lg shadow-md transition cursor-pointer"
+                className="bg-white hover:bg-green-200 text-green-900 font-bold py-2 px-4 md:py-3 md:px-6 rounded-lg shadow-md transition cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => (window.location.href = '/booking')}

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import productsData from '../../data/products.json'; // Import the JSON file
 import { useCart } from '../../cart/CartContext'; // Import the custom hook to access cart context
 
 const SingleProduct = () => {
   const { id } = useParams();
   const { addToCart } = useCart(); // Use the addToCart function from CartContext
+  const navigate = useNavigate(); // useNavigate hook for programmatic navigation
 
   // Extract products from JSON data
   const products = productsData.herbalProducts
@@ -29,6 +30,10 @@ const SingleProduct = () => {
     addToCart(product); // Add the product to the cart using the context function
   };
 
+  const handleGoBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
   return (
     <div className="p-6 max-w-5xl mx-auto bg-white shadow-lg rounded-lg flex flex-col lg:flex-row gap-10 m-10">
       {/* Left Column: Product Image */}
@@ -50,13 +55,24 @@ const SingleProduct = () => {
           </p>
         </div>
 
-        {/* Add to Cart Button */}
-        <button
-          onClick={handleAddToCart} // Trigger addToCart function on click
-          className="bg-green-900 text-white py-3 px-6 rounded-lg shadow-md hover:bg-green-700 transition duration-300 cursor-pointer"
-        >
-          Add to Cart
-        </button>
+        {/* Buttons Section */}
+        <div className="flex gap-6">
+          {/* Add to Cart Button */}
+          <button
+            onClick={handleAddToCart}
+            className="bg-green-900 text-white py-4 px-8 text-lg rounded-lg shadow-md hover:bg-green-700 transition duration-300 cursor-pointer"
+          >
+            Add to Cart
+          </button>
+
+          {/* Back Button */}
+          <button
+            onClick={handleGoBack}
+            className="bg-gray-300 text-gray-700 py-4 px-8 text-lg rounded-lg shadow-md hover:bg-gray-400 transition duration-300 cursor-pointer"
+          >
+            Back
+          </button>
+        </div>
       </div>
     </div>
   );

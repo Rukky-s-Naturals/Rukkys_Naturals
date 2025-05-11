@@ -1,26 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom'; // Corrected import
-import { FaWhatsapp, FaShoppingCart } from 'react-icons/fa'; // Import Cart Icon
+import { FaWhatsapp, FaShoppingCart, FaBars, FaTimes } from 'react-icons/fa'; // Import Cart and Menu Icons
 import { useCart } from '../cart/CartContext'; // Import the custom hook to access cart
 import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
   const { totalItems } = useCart(); // Get the total number of items in the cart
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle mobile menu
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <nav className="flex flex-wrap items-center justify-between p-2 font-bold font-sans bg-green-50 shadow-md">
       {/* Logo */}
       <div className="flex items-center">
-        {/* Logo Image */}
-        <img
-          src={logo} // Replace with the correct path to your logo
-          alt="Rukkys Naturals Logo"
-          className="h-22 w-50 mr-2" // Adjust size as needed
-        />
+        <Link to="/">
+          <img
+            src={logo}
+            alt="Rukkys Naturals Logo"
+            className="h-22 w-50 mr-2" // Adjust size as needed
+          />
+        </Link>
       </div>
 
-      {/* Navigation Links */}
-      <ul className="hidden lg:flex flex-row gap-2 border-1 border-gray-400 rounded-4xl shadow-2xl ml-15 p-4 w-180 justify-evenly">
+      {/* Desktop Navigation Links */}
+      <ul className="hidden lg:flex flex-row gap-2 border border-gray-400 rounded-4xl shadow-2xl ml-15 p-4 w-180 justify-evenly">
         <NavLink to="/"><li>Home</li></NavLink>
         <NavLink to="about"><li>About</li></NavLink>
         <NavLink to="allproducts"><li>Products</li></NavLink>
@@ -30,7 +34,7 @@ const Navbar = () => {
       </ul>
 
       {/* Social Links */}
-      <span className="hidden lg:flex gap-5">
+      <div className="hidden lg:flex gap-5">
         <a
           href="https://www.whatsapp.com/"
           className="text-green-900 hover:text-green-600 transition duration-300"
@@ -48,7 +52,7 @@ const Navbar = () => {
             </span>
           )}
         </Link>
-      </span>
+      </div>
 
       {/* Explore Button */}
       <Link to="allproducts">
@@ -57,31 +61,42 @@ const Navbar = () => {
         </button>
       </Link>
 
+      {/* Mobile Menu Toggle */}
+      <button
+        onClick={toggleMenu}
+        className="lg:hidden text-green-900 text-2xl"
+        aria-label="Toggle Menu"
+      >
+        {isMenuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+
       {/* Mobile Menu */}
-      <div className="lg:hidden flex flex-col w-full mt-4">
-        <ul className="flex flex-col gap-2 items-center text-center">
-          <NavLink to="/"><li>Home</li></NavLink>
-          <NavLink to="about"><li>About</li></NavLink>
-          <NavLink to="allproducts"><li>Products</li></NavLink>
-          <NavLink to="blog"><li>Blog</li></NavLink>
-          <NavLink to="booking"><li>Consultation</li></NavLink>
-          <NavLink to="contact"><li>Contact</li></NavLink>
-        </ul>
-        <div className="flex gap-5 mt-4 justify-center">
-          <a
-            href="https://www.whatsapp.com/"
-            className="text-green-900 hover:text-green-600 transition duration-300"
-            aria-label="WhatsApp"
-          >
-            <FaWhatsapp className="text-3xl" />
-          </a>
+      {isMenuOpen && (
+        <div className="lg:hidden flex flex-col w-full mt-4 bg-green-50 shadow-md">
+          <ul className="flex flex-col gap-2 items-center text-center">
+            <NavLink to="/" onClick={toggleMenu}><li>Home</li></NavLink>
+            <NavLink to="about" onClick={toggleMenu}><li>About</li></NavLink>
+            <NavLink to="allproducts" onClick={toggleMenu}><li>Products</li></NavLink>
+            <NavLink to="blog" onClick={toggleMenu}><li>Blog</li></NavLink>
+            <NavLink to="booking" onClick={toggleMenu}><li>Consultation</li></NavLink>
+            <NavLink to="contact" onClick={toggleMenu}><li>Contact</li></NavLink>
+          </ul>
+          <div className="flex gap-5 mt-4 justify-center">
+            <a
+              href="https://www.whatsapp.com/"
+              className="text-green-900 hover:text-green-600 transition duration-300"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp className="text-3xl" />
+            </a>
+          </div>
+          <Link to="allproducts">
+            <button className="flex border-2 border-green-300 rounded-4xl w-full p-3 bg-green-900 text-white justify-center cursor-pointer hover:bg-green-700 transition duration-300 mt-4">
+              Explore
+            </button>
+          </Link>
         </div>
-        <Link to="allproducts">
-          <button className="flex border-2 border-green-300 rounded-4xl w-full p-3 bg-green-900 text-white justify-center cursor-pointer hover:bg-green-700 transition duration-300 mt-4">
-            Explore
-          </button>
-        </Link>
-      </div>
+      )}
     </nav>
   );
 };

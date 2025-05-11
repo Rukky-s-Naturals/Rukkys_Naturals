@@ -114,7 +114,7 @@ const Consultation = () => {
                 <option value="">Select type</option>
                 <option>General Wellness</option>
                 <option>Herbal Remedies</option>
-                <option>Sex Therapy</option>
+                <option>Sexual Wellness</option>
                 <option>Other</option>
               </select>
             </div>
@@ -188,7 +188,7 @@ const Consultation = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-3 bg-green-900 text-white font-medium rounded-md hover:bg-green-700 transition"
+              className="w-full py-3 bg-green-900 text-white font-medium rounded-md hover:bg-green-700 transition cursor-pointer"
             >
               Book Consultation
             </button>

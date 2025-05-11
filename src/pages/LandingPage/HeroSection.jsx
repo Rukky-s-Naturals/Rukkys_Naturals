@@ -29,7 +29,7 @@ const HeroSection = () => {
         <motion.img
           key={currentIndex}
           src={images[currentIndex]}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -48,38 +48,38 @@ const HeroSection = () => {
             key={currentIndex}
             initial={{
               opacity: 0,
-              x: currentIndex === 1 ? '-100%' : currentIndex === 2 ? '100%' : 0, // For left and right entry
+              x: currentIndex === 1 ? '-100%' : currentIndex === 2 ? '100%' : 0,
             }}
-            animate={{ opacity: 1, x: 0 }} // Center position after entering
+            animate={{ opacity: 1, x: 0 }}
             exit={{
               opacity: 0,
-              x: currentIndex === 1 ? '100%' : currentIndex === 2 ? '-100%' : 0, // Exit to opposite side
+              x: currentIndex === 1 ? '100%' : currentIndex === 2 ? '-100%' : 0,
             }}
             transition={{ duration: 1 }}
             className="space-y-4"
           >
-            <p className="text-5xl font-bold">{textData[currentIndex].heading}</p>
-            <p className="text-6xl font-extrabold">{textData[currentIndex].subheading}</p>
-            <p className="text-xl">{textData[currentIndex].description}</p>
+            <p className="text-2xl sm:text-4xl lg:text-5xl font-bold">{textData[currentIndex].heading}</p>
+            <p className="text-3xl sm:text-5xl lg:text-6xl font-extrabold">{textData[currentIndex].subheading}</p>
+            <p className="text-base sm:text-lg lg:text-xl">{textData[currentIndex].description}</p>
           </motion.div>
         </AnimatePresence>
 
         {/* Buttons with Animations */}
-        <div className="flex gap-4 mt-6">
+        <div className="flex flex-col sm:flex-row gap-4 mt-6">
           <AnimatePresence>
             <motion.div
               key={currentIndex}
               initial={{
                 opacity: 0,
-                x: currentIndex === 1 ? '-100%' : currentIndex === 2 ? '100%' : 0, // Buttons enter from left or right
+                x: currentIndex === 1 ? '-100%' : currentIndex === 2 ? '100%' : 0,
               }}
-              animate={{ opacity: 1, x: 0 }} // Center the buttons after entry
+              animate={{ opacity: 1, x: 0 }}
               exit={{
                 opacity: 0,
-                x: currentIndex === 1 ? '100%' : currentIndex === 2 ? '-100%' : 0, // Exit to opposite side
+                x: currentIndex === 1 ? '100%' : currentIndex === 2 ? '-100%' : 0,
               }}
               transition={{ duration: 1 }}
-              className="flex gap-4"
+              className="flex flex-col sm:flex-row gap-4"
             >
               <Link
                 to="booking"

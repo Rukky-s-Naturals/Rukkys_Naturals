@@ -1,7 +1,7 @@
 {
   "herbalProducts": [
     {
-      "category": "Leaves",
+      "category": "Leaves / herbs",
       "products": [
         {
           "id": 1,
@@ -74,6 +74,45 @@
         }
       ]
     },
+
+    {
+      "category": "Nuts",
+      "products": [
+        {
+          "id": 13,
+          "name": "Almond Nuts",
+          "description": "Rich in vitamin E and healthy fats, almonds support heart health and glowing skin.",
+          "price": 15.99,
+          "weight": "200g",
+          "image": "/images/almonds.png"
+        },
+        {
+          "id": 14,
+          "name": "Cashew Nuts",
+          "description": "Creamy and delicious, cashews are an excellent source of protein and magnesium.",
+          "price": 14.99,
+          "weight": "200g",
+          "image": "/images/cashew.png"
+        },
+        {
+          "id": 15,
+          "name": "Cola Nuts",
+          "description": "Traditionally used as a natural stimulant, cola nuts are energizing and refreshing.",
+          "price": 9.99,
+          "weight": "150g",
+          "image": "/images/colanut.png"
+        },
+        {
+          "id": 16,
+          "name": "Tiger Nuts",
+          "description": "High in fiber and a natural aphrodisiac, tiger nuts are perfect for snacking.",
+          "price": 11.99,
+          "weight": "250g",
+          "image": "/images/tigernut.png"
+        }
+      ]
+    },
+
     {
       "category": "Powder",
       "products": [
@@ -108,6 +147,44 @@
           "price": 19.99,
           "weight": "250g",
           "image": "/images/spirulina.png"
+        }
+      ]
+    },
+    
+    {
+      "category": "Oils",
+      "products": [
+        {
+          "id": 17,
+          "name": "Olive Oil",
+          "description": "Rich in antioxidants, olive oil supports heart health and glowing skin.",
+          "price": 19.99,
+          "weight": "500ml",
+          "image": "/images/oliveoil.png"
+        },
+        {
+          "id": 18,
+          "name": "Coconut Oil",
+          "description": "Coconut oil nourishes skin, supports hair health, and is a versatile cooking ingredient.",
+          "price": 16.99,
+          "weight": "500ml",
+          "image": "/images/coconutoil.png"
+        },
+        {
+          "id": 19,
+          "name": "Tea Tree Oil",
+          "description": "Tea tree oil is known for its antiseptic properties, ideal for skin care and healing wounds.",
+          "price": 12.99,
+          "weight": "100ml",
+          "image": "/images/teatreeoil.png"
+        },
+        {
+          "id": 20,
+          "name": "Shea Butter Oil",
+          "description": "Shea butter oil deeply moisturizes and protects the skin, leaving it smooth and soft.",
+          "price": 18.99,
+          "weight": "250ml",
+          "image": "/images/sheabutteroil.png"
         }
       ]
     }
