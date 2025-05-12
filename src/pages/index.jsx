@@ -4,7 +4,7 @@ import Welcome from './LandingPage/Welcome'
 import Testimonials from './LandingPage/Testimonials'
 import Discovery from './LandingPage/Discovery'
 import BlogFeature from './LandingPage/BlogFeature'
-import Sexual from './LandingPage/sexual'
+import Sexual from './LandingPage/Sexual'
 
 const HomeView = () => {
   return (
