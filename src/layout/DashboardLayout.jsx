@@ -1,14 +1,25 @@
 import React from 'react'
-import Sidebar from '../components/SideBar'
 import DashNavbar from '../components/DashNavbar'
+import Sidebar from '../components/Sidebar'
 import { Outlet } from 'react-router'
 
 const DashboardLayout = () => {
   return (
     <div>
-        <Sidebar/>
-        <DashNavbar/>
-        <Outlet/>
+       <div className="flex h-screen">
+      {/* Sidebar */}
+      <Sidebar />
+
+      <div className="flex flex-col flex-grow">
+        {/* DashNav */}
+        <DashNavbar />
+
+        {/* Dashboard Content */}
+        <main className="p-6 flex-grow overflow-y-auto">
+          <Outlet />
+        </main>
+      </div>
+    </div>
     </div>
   )
 }

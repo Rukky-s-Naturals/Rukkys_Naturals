@@ -5,19 +5,13 @@ import ceo from '../../assets/images/ceo.png';
 const About = () => {
   return (
     <section className="bg-gradient-to-b to-white py-20 px-6">
-      {/* Introduction Section */}
-      <div className="max-w-6xl mx-auto text-center space-y-6">
-        <h1 className="text-5xl font-extrabold text-green-800">
-          Welcome to Rukky's Naturals
-        </h1>
-        <p className="text-lg text-gray-600">
-          Discover the transformative power of nature. Our mission is to bring
-          wellness to your doorstep through carefully crafted, natural products.
-        </p>
-      </div>
-
       {/* About Section */}
-      <div className="max-w-6xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <img
+          src={about3}
+          alt="About Rukky's Naturals"
+          className="rounded-xl shadow-lg object-cover transition-transform duration-500 hover:scale-105"
+        />
         <div className="space-y-6">
           <h2 className="text-4xl font-bold text-green-800">About Us</h2>
           <p className="text-gray-700 leading-relaxed">
@@ -31,11 +25,6 @@ const About = () => {
             Learn More
           </button>
         </div>
-        <img
-          src={about3}
-          alt="About Rukky's Naturals"
-          className="rounded-xl shadow-lg object-cover transition-transform duration-500 hover:scale-105"
-        />
       </div>
 
       {/* Mission and Vision Section */}

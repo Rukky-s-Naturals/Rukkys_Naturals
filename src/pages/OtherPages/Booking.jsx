@@ -51,16 +51,16 @@ const Consultation = () => {
     <section className="py-16 px-6 text-green-900 rounded-lg shadow-lg">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
-        <h2 className="text-4xl font-bold text-center mb-8">
+        <h2 className="text-4xl font-bold text-center mb-8 sm:text-3xl">
           Book a <span className="text-yellow-500">Consultation</span>
         </h2>
-        <p className="text-center text-lg mb-12">
+        <p className="text-center text-lg mb-12 sm:text-base">
           Schedule your session and get personalized advice on herbal remedies
           and sexual wellness.
         </p>
 
         {/* Consultation Form */}
-        <div className="bg-white text-black p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+        <div className="bg-white text-black p-8 rounded-lg shadow-lg max-w-3xl mx-auto sm:p-6">
           <form className="space-y-6" onSubmit={handleBooking}>
             {/* Name Input */}
             <div>
@@ -73,7 +73,7 @@ const Consultation = () => {
               <input
                 type="text"
                 id="name"
-                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:p-2"
                 placeholder="Enter your full name"
                 required
               />
@@ -90,7 +90,7 @@ const Consultation = () => {
               <input
                 type="email"
                 id="email"
-                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:p-2"
                 placeholder="Enter your email address"
                 required
               />
@@ -108,13 +108,14 @@ const Consultation = () => {
                 id="type"
                 value={consultationType}
                 onChange={(e) => setConsultationType(e.target.value)}
-                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:p-2"
                 required
               >
                 <option value="">Select type</option>
                 <option>General Wellness</option>
                 <option>Herbal Remedies</option>
                 <option>Sexual Wellness</option>
+                <option>Post Natal Wellness</option>
                 <option>Other</option>
               </select>
             </div>
@@ -133,7 +134,7 @@ const Consultation = () => {
                   id="other"
                   value={otherConsultation}
                   onChange={(e) => setOtherConsultation(e.target.value)}
-                  className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+                  className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:p-2"
                   placeholder="Specify your consultation type"
                   required
                 />
@@ -153,7 +154,7 @@ const Consultation = () => {
                 id="date"
                 value={selectedDate}
                 onChange={(e) => setSelectedDate(e.target.value)}
-                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:p-2"
                 required
               />
             </div>
@@ -170,7 +171,7 @@ const Consultation = () => {
                 id="time"
                 value={selectedTime}
                 onChange={(e) => setSelectedTime(e.target.value)}
-                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500"
+                className="mt-1 block w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:p-2"
                 required
               >
                 <option value="">Select time</option>
@@ -188,7 +189,7 @@ const Consultation = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-3 bg-green-900 text-white font-medium rounded-md hover:bg-green-700 transition cursor-pointer"
+              className="w-full py-3 bg-green-900 text-white font-medium rounded-md hover:bg-green-700 transition cursor-pointer sm:py-2"
             >
               Book Consultation
             </button>

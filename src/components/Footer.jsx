@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  FaInstagram,
-  FaLinkedinIn,
-  FaFacebook,
-  FaTiktok,
-  FaMapMarkerAlt,
-  FaEnvelope,
-  FaPhoneAlt, // Added phone icon
-} from 'react-icons/fa';
+import {FaInstagram, FaLinkedinIn, FaFacebook, FaTiktok, FaMapMarkerAlt, FaEnvelope,FaPhoneAlt} from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -38,7 +30,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a href="/products" className="hover:underline">
+              <a href="/allProducts" className="hover:underline">
                 Products
               </a>
             </li>
