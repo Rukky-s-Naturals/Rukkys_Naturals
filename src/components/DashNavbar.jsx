@@ -8,7 +8,7 @@ const DashNav = () => {
   const toggleDropdown = () => setDropdownVisible(!dropdownVisible);
 
   return (
-    <div className="w-full h-24 bg-white shadow-md flex items-center justify-between px-4">
+    <div className="w-full h-22 bg-white shadow-md flex items-center justify-between px-4">
       {/* Title */}
       <div className="flex items-center gap-2">
         <span className="text-xl font-bold text-green-900">Admin Dashboard</span>
