@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import species2 from '../../assets/images/species2.png';
 import { FaArrowRight } from 'react-icons/fa';
 
@@ -18,13 +19,11 @@ const Welcome = () => {
           <p className="text-sm md:text-lg">
             We are passionate about health and herbal living for optimal well-being.
           </p>
-          <a
-            href="about"
-            className="inline-flex items-center gap-2 text-sm md:text-lg font-medium text-white bg-green-800 px-3 py-2 md:px-4 md:py-2 rounded hover:bg-green-300 transition duration-300"
-          >
-            Our Story
+          <Link to="about"
+            className="inline-flex items-center gap-2 text-sm md:text-lg font-medium text-white bg-green-800 px-3 py-2 md:px-4 md:py-2 rounded hover:bg-green-300 transition duration-300">
+              Our Story
             <FaArrowRight className="text-base md:text-xl" />
-          </a>
+          </Link>
         </div>
 
         {/* Image Section */}

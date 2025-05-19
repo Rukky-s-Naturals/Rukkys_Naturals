@@ -1,178 +1,163 @@
 import React, { useState } from "react";
 
 const BlogPost = () => {
-  const [posts, setPosts] = useState([
-    {
-      id: 1,
-      title: "The Importance of Organic Farming",
-      date: "2025-05-10",
-      status: "Published",
-    },
-    {
-      id: 2,
-      title: "Top 5 Herbs for a Healthy Life",
-      date: "2025-05-08",
-      status: "Draft",
-    },
-  ]);
-
+  const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState({
     title: "",
     content: "",
     category: "",
+    image: null,
+    imagePreview: null,
   });
-
-  const [editingPost, setEditingPost] = useState(null);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewPost({ ...newPost, [name]: value });
   };
 
-  const addPost = () => {
-    setPosts([
-      ...posts,
-      {
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setNewPost({
         ...newPost,
-        id: posts.length + 1,
-        date: new Date().toISOString().split("T")[0],
-        status: "Draft",
-      },
-    ]);
-    setNewPost({ title: "", content: "", category: "" });
+        image: file,
+        imagePreview: URL.createObjectURL(file),
+      });
+    }
   };
 
-  const deletePost = (id) => {
-    setPosts(posts.filter((post) => post.id !== id));
-  };
+  const addPost = () => {
+    if (!newPost.title.trim()) return;
 
-  const handleEditPost = (post) => {
-    setEditingPost(post);
-  };
+    const newEntry = {
+      id: posts.length + 1,
+      title: newPost.title,
+      category: newPost.category,
+      content: newPost.content,
+      imagePreview: newPost.imagePreview,
+      date: new Date().toISOString().split("T")[0],
+      status: "Draft",
+    };
 
-  const saveEditedPost = () => {
-    setPosts(
-      posts.map((post) => (post.id === editingPost.id ? editingPost : post))
-    );
-    setEditingPost(null);
+    setPosts([...posts, newEntry]);
+    setNewPost({ title: "", content: "", category: "", image: null, imagePreview: null });
   };
 
   return (
-    <div className="p-6 bg-white shadow rounded-lg">
-      <h2 className="text-xl font-bold mb-4">Manage Blog Posts</h2>
-
-      {/* Add Blog Post Section */}
-      <div className="mb-6">
-        <h3 className="text-lg font-semibold mb-2">Add New Post</h3>
-        <input
-          type="text"
-          name="title"
-          placeholder="Post Title"
-          value={newPost.title}
-          onChange={handleInputChange}
-          className="w-full mb-2 p-2 border rounded-lg"
-        />
-        <textarea
-          name="content"
-          placeholder="Content"
-          value={newPost.content}
-          onChange={handleInputChange}
-          className="w-full mb-2 p-2 border rounded-lg"
-        ></textarea>
-        <input
-          type="text"
-          name="category"
-          placeholder="Category"
-          value={newPost.category}
-          onChange={handleInputChange}
-          className="w-full mb-2 p-2 border rounded-lg"
-        />
-        <button
-          onClick={addPost}
-          className="bg-green-700 text-white px-4 py-2 rounded-lg hover:bg-green-500 cursor-pointer"
-        >
-          Add Post
-        </button>
-      </div>
-
-      {/* Blog List */}
-      <h3 className="text-lg font-semibold mb-2">Blog Posts</h3>
-      <table className="w-full table-auto border-collapse border border-gray-300">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="border border-gray-300 px-4 py-2">Title</th>
-            <th className="border border-gray-300 px-4 py-2">Date</th>
-            <th className="border border-gray-300 px-4 py-2">Status</th>
-            <th className="border border-gray-300 px-4 py-2">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {posts.map((post) => (
-            <tr key={post.id}>
-              <td className="border border-gray-300 px-4 py-2">{post.title}</td>
-              <td className="border border-gray-300 px-4 py-2">{post.date}</td>
-              <td className="border border-gray-300 px-4 py-2">{post.status}</td>
-              <td className="border border-gray-300 px-4 py-2">
-                <button
-                  onClick={() => handleEditPost(post)}
-                  className="bg-green-400 text-white px-2 py-1 rounded-lg mr-2 cursor-pointer"
-                >
-                  Edit
-                </button>
-                <button
-                  onClick={() => deletePost(post.id)}
-                  className="bg-red-500 text-white px-2 py-1 rounded-lg cursor-pointer"
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      {/* Edit Blog Post Section */}
-      {editingPost && (
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold mb-2">Edit Post</h3>
+    <div className="p-6 max-w-4xl mx-auto bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-semibold mb-6">Add New Post</h2>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          addPost();
+        }}
+        className="space-y-6"
+      >
+        {/* Title */}
+        <div>
+          <label className="block text-sm font-medium mb-1" htmlFor="title">
+            Title
+          </label>
           <input
-            type="text"
+            id="title"
             name="title"
-            value={editingPost.title}
-            onChange={(e) =>
-              setEditingPost({ ...editingPost, title: e.target.value })
-            }
-            className="w-full mb-2 p-2 border rounded-lg"
-          />
-          <textarea
-            name="content"
-            value={editingPost.content}
-            onChange={(e) =>
-              setEditingPost({ ...editingPost, content: e.target.value })
-            }
-            className="w-full mb-2 p-2 border rounded-lg"
-          ></textarea>
-          <input
             type="text"
-            name="category"
-            value={editingPost.category}
-            onChange={(e) =>
-              setEditingPost({ ...editingPost, category: e.target.value })
-            }
-            className="w-full mb-2 p-2 border rounded-lg"
+            value={newPost.title}
+            onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+            placeholder="Enter post title"
+            required
           />
+        </div>
+
+        {/* Category */}
+        <div>
+          <label className="block text-sm font-medium mb-1" htmlFor="category">
+            Category
+          </label>
+          <input
+            id="category"
+            name="category"
+            type="text"
+            value={newPost.category}
+            onChange={handleInputChange}
+            className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-green-600"
+            placeholder="Enter category"
+          />
+        </div>
+
+        {/* Content */}
+        <div>
+          <label className="block text-sm font-medium mb-1" htmlFor="content">
+            Content
+          </label>
+          <textarea
+            id="content"
+            name="content"
+            value={newPost.content}
+            onChange={handleInputChange}
+            rows={5}
+            className="w-full border border-gray-300 rounded-md p-3 text-sm resize-y focus:outline-none focus:ring-2 focus:ring-green-600"
+            placeholder="Write your post content here"
+          />
+        </div>
+
+        {/* Image Upload */}
+        <div>
+          <label className="block text-sm font-medium mb-1" htmlFor="image">
+            Upload Image
+          </label>
+          <input
+            id="image"
+            name="image"
+            type="file"
+            accept="image/*"
+            onChange={handleImageChange}
+            className="block w-full text-sm text-gray-600 cursor-pointer"
+          />
+          {newPost.imagePreview && (
+            <img
+              src={newPost.imagePreview}
+              alt="Preview"
+              className="mt-3 max-h-48 rounded-md object-cover shadow-sm"
+            />
+          )}
+        </div>
+
+        {/* Submit Button */}
+        <div className="flex justify-end">
           <button
-            onClick={saveEditedPost}
-            className="bg-green-500 text-white px-4 py-2 rounded-lg cursor-pointer"
+            type="submit"
+            className="bg-green-700 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-md transition cursor-pointer"
           >
-            Save Changes
+            Add Post
           </button>
-          <button
-            onClick={() => setEditingPost(null)}
-            className="ml-2 bg-gray-500 text-white px-4 py-2 rounded-lg cursor-pointer"
-          >
-            Cancel
-          </button>
+        </div>
+      </form>
+
+      {/* Posts List */}
+      {posts.length > 0 && (
+        <div className="mt-8">
+          <h3 className="text-lg font-semibold mb-4">Posts List</h3>
+          <ul className="space-y-4">
+            {posts.map((post) => (
+              <li
+                key={post.id}
+                className="p-4 border border-gray-200 rounded-md shadow-sm"
+              >
+                <h4 className="text-xl font-medium">{post.title}</h4>
+                <p className="text-gray-500 text-sm">{post.category}</p>
+                <p className="mt-2">{post.content}</p>
+                {post.imagePreview && (
+                  <img
+                    src={post.imagePreview}
+                    alt={post.title}
+                    className="mt-3 max-h-48 rounded-md object-cover"
+                  />
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       )}
     </div>

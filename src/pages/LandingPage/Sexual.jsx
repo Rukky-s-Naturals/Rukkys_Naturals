@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import woman from '../../assets/images/woman.png';
-import woman2 from '../../assets/images/woman2.png';
 import woman3 from '../../assets/images/woman3.png';
 import woman4 from '../../assets/images/woman4.png';
-
+import woman5 from '../../assets/images/woman5.png';
 const Sexual = () => {
   const slides = [
     {
@@ -12,7 +11,7 @@ const Sexual = () => {
       text: "Rediscover the Power of Herbal Intimacy",
     },
     {
-      image: woman2,
+      image: woman5,
       text: "Empower Your Relationships with Nature",
     },
     {

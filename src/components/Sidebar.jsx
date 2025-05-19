@@ -1,13 +1,18 @@
-import React from 'react';
+import React from 'react'; 
 import { NavLink } from 'react-router-dom';
 import { FaBox, FaEdit, FaShoppingCart, FaCog, FaUser, FaSignOutAlt, FaChartPie } from 'react-icons/fa';
+import logo from '../assets/images/logo.png';
 
 const Sidebar = () => {
   return (
     <div className="w-64 h-screen bg-green-100 shadow-lg flex flex-col">
       {/* Logo */}
-      <div className="p-4 text-xl font-bold text-center border-b border-gray-200">
-        Admin Dashboard
+      <div className="p-4 text-center border-b border-gray-200">
+        <img
+          src={logo}
+          alt="Logo"
+          className="h-12 mx-auto"
+        />
       </div>
 
       {/* Navigation Links */}

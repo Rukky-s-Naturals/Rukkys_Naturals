@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaBell, FaSearch, FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import logo from '../assets/images/logo.png'; // Adjust the path if necessary
 
 const DashNav = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -9,21 +8,10 @@ const DashNav = () => {
   const toggleDropdown = () => setDropdownVisible(!dropdownVisible);
 
   return (
-    <div className="w-full h-16 bg-white shadow-md flex items-center justify-between px-4">
-      {/* Logo */}
+    <div className="w-full h-24 bg-white shadow-md flex items-center justify-between px-4">
+      {/* Title */}
       <div className="flex items-center gap-2">
-        <img src={logo} alt="Admin Dashboard Logo" className="w-30 h-15" />
         <span className="text-xl font-bold text-green-900">Admin Dashboard</span>
-      </div>
-
-      {/* Search Bar */}
-      <div className="flex items-center gap-2">
-        <FaSearch className="w-5 h-5 text-green-900" />
-        <input
-          type="text"
-          placeholder="Search..."
-          className="p-2 border border-green-700 rounded-lg focus:outline-none focus:ring focus:ring-gray-200"
-        />
       </div>
 
       {/* Right Section */}
@@ -47,12 +35,14 @@ const DashNav = () => {
           </button>
           {dropdownVisible && (
             <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg">
-              <Link to="profile"
+              <Link
+                to="profile"
                 className="block px-4 py-2 text-green-900 hover:bg-green-200"
               >
                 Profile
               </Link>
-              <Link to="settings"
+              <Link
+                to="settings"
                 className="block px-4 py-2 text-green-900 hover:bg-green-200"
               >
                 Settings
@@ -66,10 +56,19 @@ const DashNav = () => {
             </div>
           )}
         </div>
+
+        {/* Search Bar */}
+        <div className="flex items-center gap-2">
+          <FaSearch className="w-5 h-5 text-green-900" />
+          <input
+            type="text"
+            placeholder="Search..."
+            className="p-2 border border-green-700 rounded-lg focus:outline-none focus:ring focus:ring-gray-200"
+          />
+        </div>
       </div>
     </div>
   );
 };
 
 export default DashNav;
-3
