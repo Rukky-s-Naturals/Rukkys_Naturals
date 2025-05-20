@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import woman from '../../assets/images/woman.png';
 import woman3 from '../../assets/images/woman3.png';
 import woman4 from '../../assets/images/woman4.png';
 import woman5 from '../../assets/images/woman5.png';
+
 const Sexual = () => {
   const slides = [
     {
@@ -80,14 +82,13 @@ const Sexual = () => {
               >
                 "I can teach you how to transform your sex life naturally."
               </motion.p>
-              <motion.button
+              <motion.div
                 className="bg-white hover:bg-green-200 text-green-900 font-bold py-2 px-4 md:py-3 md:px-6 rounded-lg shadow-md transition cursor-pointer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => (window.location.href = '/booking')}
               >
-                Book Consultation
-              </motion.button>
+                <Link to="/booking">Book Consultation</Link>
+              </motion.div>
             </div>
           </motion.div>
         ))}
