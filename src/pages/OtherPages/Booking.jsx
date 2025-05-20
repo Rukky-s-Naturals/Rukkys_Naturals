@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router";
 import { FaCalendarAlt, FaClock } from "react-icons/fa";
 
 const Consultation = () => {
@@ -203,12 +204,11 @@ const Consultation = () => {
             <span className="font-bold">+233 (0) 55 459 9729</span>.
           </p>
           <p className="mt-2">
-            <a
-              href="/contact"
+            <Link to="/contact"
               className="text-yellow-500 hover:text-yellow-400 underline transition"
             >
               Contact Us
-            </a>{" "}
+            </Link>{" "}
             for further details.
           </p>
         </div>
