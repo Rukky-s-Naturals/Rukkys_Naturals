@@ -18,7 +18,7 @@ import Article2 from './Blog/article2';
 import DashboardLayout from './layout/DashboardLayout';
 import DashProducts from './adminDashboard/DashProducts';
 import Overview from './adminDashboard/Overview';
-import Blogpost from './adminDashboard/BlogPost';
+import Blogpost from './adminDashboard/Blogpost';
 import Settings from './adminDashboard/Settings';
 import Orders from './adminDashboard/Orders';
 import Profile from './adminDashboard/Profile';

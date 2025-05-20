@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const BlogPost = () => {
+const Blogpost = () => {
   const [posts, setPosts] = useState([]);
   const [newPost, setNewPost] = useState({
     title: "",
@@ -164,4 +164,4 @@ const BlogPost = () => {
   );
 };
 
-export default BlogPost;
+export default Blogpost;
