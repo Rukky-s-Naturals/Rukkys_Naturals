@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import herbal10 from '../../assets/images/herbal10.png';
 import herbal from '../../assets/images/herbal.png';
-import herbal9 from '../../assets/images/herbal9.png';
+import species4 from '../../assets/images/species4.jpg';
 
-const HeroSection = () => {
-  const images = [herbal10, herbal, herbal9];
+const HeroSection = React.memo(() => {
+  const images = [herbal10, herbal, species4];
   const textData = [
     { heading: "Welcome to", subheading: "Rukky's Naturals", description: "Your destination for natural herbal wellness" },
     { heading: "Discover Herbal Healing", subheading: "With Rukky's Naturals", description: "Experience the natural power of herbs for your health and well-being" },
@@ -22,6 +22,14 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  useEffect(() => {
+    // Preload images for smoother transitions
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image;
+    });
+  }, [images]);
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Image Slideshow */}
@@ -33,7 +41,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1 }} // Original animation time retained
           alt={`background ${currentIndex + 1}`}
         />
       </AnimatePresence>
@@ -46,16 +54,10 @@ const HeroSection = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentIndex}
-            initial={{
-              opacity: 0,
-              x: currentIndex === 1 ? '-100%' : currentIndex === 2 ? '100%' : 0,
-            }}
+            initial={{ opacity: 0, x: currentIndex === 1 ? '-100%' : currentIndex === 2 ? '100%' : 0 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{
-              opacity: 0,
-              x: currentIndex === 1 ? '100%' : currentIndex === 2 ? '-100%' : 0,
-            }}
-            transition={{ duration: 1 }}
+            exit={{ opacity: 0, x: currentIndex === 1 ? '100%' : currentIndex === 2 ? '-100%' : 0 }}
+            transition={{ duration: 1 }} // Original animation time retained
             className="space-y-4"
           >
             <p className="text-2xl sm:text-4xl lg:text-5xl font-bold">{textData[currentIndex].heading}</p>
@@ -64,41 +66,24 @@ const HeroSection = () => {
           </motion.div>
         </AnimatePresence>
 
-        {/* Buttons with Animations */}
+        {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-6">
-          <AnimatePresence>
-            <motion.div
-              key={currentIndex}
-              initial={{
-                opacity: 0,
-                x: currentIndex === 1 ? '-100%' : currentIndex === 2 ? '100%' : 0,
-              }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{
-                opacity: 0,
-                x: currentIndex === 1 ? '100%' : currentIndex === 2 ? '-100%' : 0,
-              }}
-              transition={{ duration: 1 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Link
-                to="booking"
-                className="px-8 py-3 border-3 border-white text-white bg-transparent rounded-lg hover:bg-white hover:text-green-900 cursor-pointer transition duration-300"
-              >
-                Book Consultation
-              </Link>
-              <Link
-                to="allproducts"
-                className="px-8 py-3 border-3 border-green-300 bg-green-900 text-white rounded-lg hover:bg-green-600 cursor-pointer transition duration-300"
-              >
-                Shop Now
-              </Link>
-            </motion.div>
-          </AnimatePresence>
+          <Link
+            to="booking"
+            className="px-8 py-3 border-3 border-white text-white bg-transparent rounded-lg hover:bg-white hover:text-green-900 cursor-pointer transition duration-300"
+          >
+            Book Consultation
+          </Link>
+          <Link
+            to="allproducts"
+            className="px-8 py-3 border-3 border-green-300 bg-green-900 text-white rounded-lg hover:bg-green-600 cursor-pointer transition duration-300"
+          >
+            Shop Now
+          </Link>
         </div>
       </div>
     </div>
   );
-};
+});
 
 export default HeroSection;

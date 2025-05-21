@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import tuirmeric2 from '../../assets/images/tuirmeric2.png';
 import ashwagandhaImage from '../../assets/images/ashwa2.png';
 import fenugreekImage from '../../assets/images/fenugreek2.png';
@@ -108,12 +109,11 @@ const Blog = () => {
               <p className="text-gray-700 mb-4">
                 Discover the ancient herb ashwagandha and its incredible benefits for stress relief, energy, and overall wellness.
               </p>
-              <a
-                href="/article1"
+              <Link to="/article1"
                 className="text-green-600 font-bold hover:text-green-800"
               >
                 Read More →
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -129,12 +129,11 @@ const Blog = () => {
               <p className="text-gray-700 mb-4">
                 Learn how fenugreek seeds can enhance your health, beauty, and culinary adventures with their powerful properties.
               </p>
-              <a
-                href="/article2"
+              <Link to="/article1"
                 className="text-green-600 font-bold hover:text-green-800"
               >
                 Read More →
-              </a>
+              </Link>
             </div>
           </div>
         </div>

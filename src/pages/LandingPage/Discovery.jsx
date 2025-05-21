@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Discovery = () => {
+const Discovery = React.memo(() => {
   const [showText, setShowText] = useState(false);
 
   const handleTimeUpdate = (event) => {
@@ -19,11 +19,12 @@ const Discovery = () => {
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover z-0"
-        src="/videos/rukkysNaturals.mp4"
+        src="/videos/rukkysNaturals2.mp4"
         autoPlay
         loop
         muted
         onTimeUpdate={handleTimeUpdate}
+        preload="auto" // Native video preload
       >
         Your browser does not support the video tag.
       </video>
@@ -40,6 +41,6 @@ const Discovery = () => {
       )}
     </section>
   );
-};
+});
 
 export default Discovery;

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link } from 'react-router-dom';
 import woman from '../../assets/images/woman.png';
 import woman3 from '../../assets/images/woman3.png';
 import woman4 from '../../assets/images/woman4.png';
 import woman5 from '../../assets/images/woman5.png';
 
-const Sexual = () => {
+const Sexual = React.memo(() => {
   const slides = [
     {
       image: woman,
@@ -43,21 +43,12 @@ const Sexual = () => {
         {slides.map((slide, index) => (
           <motion.div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center flex items-center justify-center ${
-              index === currentSlide ? "pointer-events-auto" : "pointer-events-none"
+            className={`absolute inset-0 bg-cover bg-center flex items-center justify-center transition-opacity duration-1500 ${
+              index === currentSlide ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
             }`}
             style={{ backgroundImage: `url(${slide.image})` }}
-            initial={{ opacity: 0, x: 100 }}
-            animate={{
-              opacity: index === currentSlide ? 1 : 0,
-              x: index === currentSlide ? 0 : -100,
-            }}
-            transition={{
-              duration: 1.5,
-              ease: 'easeInOut',
-            }}
           >
-            <div className="absolute inset-0 bg-black opacity-70 flex flex-col justify-center items-center text-center text-white px-4 md:px-8 space-y-6">
+            <div className="absolute inset-0 bg-black/70 flex flex-col justify-center items-center text-center text-white px-4 md:px-8 space-y-6">
               <motion.h2
                 className="text-3xl md:text-5xl font-extrabold tracking-wide"
                 initial={{ scale: 0.9, opacity: 0 }}
@@ -95,6 +86,6 @@ const Sexual = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Sexual;
