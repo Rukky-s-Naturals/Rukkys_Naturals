@@ -23,6 +23,7 @@ import Settings from './adminDashboard/Settings';
 import Orders from './adminDashboard/Orders';
 import Profile from './adminDashboard/Profile';
 import Sales from './adminDashboard/Sales';
+import Health from './pages/OtherPages/Health';
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
       children: [{ index: true, element: <HomeView /> }, 
 
       {path: 'about', element: <About/>}, 
+
+      {path: 'health', element: <Health/>}, 
+
 
       {path: 'allProducts', element: <AllProducts/>}, 
       
