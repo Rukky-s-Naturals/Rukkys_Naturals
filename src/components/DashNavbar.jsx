@@ -25,7 +25,7 @@ const DashNav = () => {
         </button>
 
         {/* Profile Dropdown */}
-        <div className="relative">
+        {/* <div className="relative">
           <button
             className="flex items-center gap-2 p-2 bg-green-100 rounded-lg hover:bg-green-200 cursor-pointer"
             onClick={toggleDropdown}
@@ -55,7 +55,7 @@ const DashNav = () => {
               </button>
             </div>
           )}
-        </div>
+        </div> */}
 
         {/* Search Bar */}
         <div className="flex items-center gap-2">

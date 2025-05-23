@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import spices1 from "../../assets/images2/spices1.jpg"; // Main image
 import ceo from "../../assets/images/ceo.png"; // Founder image
@@ -225,12 +226,12 @@ const About = () => {
               </p>
               
               <div>
-              <button
-                onClick={() => (window.location.href = "/health")}
-                className="bg-green-800 text-white px-4 py-2 rounded-lg shadow-lg mt-4 hover:bg-green-700 cursor-pointer"
-              >
-                Learn More
-              </button>
+              <Link
+                  to="health"
+                  className="bg-green-800 text-white px-4 py-2 rounded-lg shadow-lg mt-4 hover:bg-green-700"
+                >
+                  Learn More
+                </Link>
             </div>
             </>
           )}

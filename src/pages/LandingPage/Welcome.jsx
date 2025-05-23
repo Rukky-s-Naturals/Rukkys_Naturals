@@ -68,7 +68,7 @@ const Welcome = () => {
           <img
             src={spices6}
             alt="Herbal Product"
-            className="rounded-lg shadow-lg w-70 md:w-80 md:h-70 hover:scale-105 transition-transform duration-300"
+            className="object-cover rounded-lg shadow-lg w-96 md:w-80 md:h-70 hover:scale-105 transition-transform duration-300"
           />
         </div>
 
