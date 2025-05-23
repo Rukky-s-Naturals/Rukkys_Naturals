@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import {FaInstagram, FaLinkedinIn, FaFacebook, FaTiktok, FaMapMarkerAlt, FaEnvelope,FaPhoneAlt} from 'react-icons/fa';
 
 const Footer = () => {
